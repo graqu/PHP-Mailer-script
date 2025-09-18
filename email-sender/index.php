@@ -26,17 +26,12 @@ try {
     $mail->Port       = $_ENV['MAIL_PORT'];                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom($_ENV['MAIL_USER'], 'Mailer');
-    $mail->addAddress($_ENV['MAIL_USER'], 'Joe User');     //Add a recipient
-    // $mail->addAddress('ellen@example.com');               //Name is optional
-    $mail->addReplyTo($_ENV['MAIL_USER'], 'Information');
-    // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
+    $mail->setFrom($_ENV['MAIL_USER'], 'Formularz Kontaktowy');
+    $mail->addAddress($_ENV['MAIL_USER'], 'Kontakt');     //Add a recipient
+    $mail->addReplyTo($_ENV['MAIL_USER'], 'no-reply');
 
     //Attachments
     $mail->addAttachment(path: 'assets/header.png', name:"zrzut_ekranu.png");         //Add attachments
-
-
     //Embedded Images
     $mail->addEmbeddedImage(path: 'assets/article_header.png', cid: "naglowek.png");         //Add attachments
 
